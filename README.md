@@ -1,4 +1,4 @@
-# Config Windows
+# Config
 
 **Config** is a basic checklist I follow to set up a new Windows development environment. It gets me up to speed with Git, GitHub, and more so I can more quickly get back to coding.
 
@@ -20,7 +20,7 @@ Add stuff here...
 
 ### 2. Download dependencies
 
-- Download and run the [Node.js Mac installer](http://nodejs.org/download/)
+- Download and run the [Node.js Windows installer](http://nodejs.org/download/)
 - Install Grunt command line tools: `$ npm install -g grunt-cli`
 - Install Bower: `$ npm install -g bower`
 
