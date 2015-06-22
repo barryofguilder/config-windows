@@ -8,7 +8,7 @@ parse_git_branch() {
 # Includes custom character for the prompt, path, and Git branch name.
 #
 # Source: kirsle.net/wizards/ps1.html
-export PS1="\n\w\$(parse_git_branch)\n-> "
+export PS1="\n\w\$(parse_git_branch)\n→ "
 
 # Aliases
 
@@ -28,8 +28,10 @@ alias st='git status'
 alias fetch='git fetch'
 alias push='git push origin head'
 alias pull='git pull'
-alias fp='fetch && pull'
-alias gmm='git merge master'
+alias add='git add --all'
+alias cm='git commit -m'
 
 ## Projects
-alias vce='cd C:/WorkAWS/Application/PatientConnect/Vocera.PatientConnect/Vocera.PatientConnect.Web'
+alias vce='cd C:/VCE/application'
+alias vcew='cd C:/VCE/application/PatientConnect/Vocera.PatientConnect.Web'
+alias vsts='cd C:/VST/StatusChecker'
