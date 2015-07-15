@@ -31,16 +31,17 @@ Add stuff here...
 
 ### 4. Tweak Sublime Text 3 just right
 
-- [Install Package Control](https://sublime.wbond.net/installation):
+- [Install Package Control](https://packagecontrol.io/installation):
   - Open Sublime Text 3 and hit ``Ctrl-` ``, then enter the following:
 ```bash
-import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 ```
 - Install and load packages (`Cmd-Shift-P`):
   - [EditorConfig](http://editorconfig.org) package
   - [Emmet](http://docs.emmet.io) package
   - [Handlebars](http://handlebarsjs.com) package
   - [Less](http://lesscss.org) package
+  - [MSBuild](https://github.com/tillig/SublimeMSBuild) package
   - [Sass](http://sass-lang.com) package
   - [Spacegray theme](http://kkga.github.io/spacegray/)
 

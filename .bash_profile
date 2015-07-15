@@ -30,8 +30,10 @@ alias push='git push origin head'
 alias pull='git pull'
 alias add='git add --all'
 alias cm='git commit -m'
+alias co='git checkout'
 
 ## Projects
 alias vce='cd C:/VCE/application'
 alias vcew='cd C:/VCE/application/PatientConnect/Vocera.PatientConnect.Web'
 alias vsts='cd C:/VST/StatusChecker'
+alias vstsw='cd C:/VST/StatusChecker/src/StatusChecker'
