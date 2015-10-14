@@ -1,14 +1,13 @@
-# Get the Git branch
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+# Add Git to prompt
+# inspired from answer at: http://stackoverflow.com/questions/10133173/alter-git-prompt-on-windows
+gitPrompt() {
+  local defaultColor='\[\e[0m\]'
+  local greenColor='\[\033[0m\]\[\033[1;32m\]'
+  echo "\n\w$greenColor$(__git_ps1)$defaultColor\n→ "
 }
 
-# Custom bash prompt
-#
-# Includes custom character for the prompt, path, and Git branch name.
-#
-# Source: kirsle.net/wizards/ps1.html
-export PS1="\n\w\$(parse_git_branch)\n→ "
+PROMPT_COMMAND='PS1="$(gitPrompt)"'
+
 
 # Aliases
 
@@ -35,5 +34,7 @@ alias co='git checkout'
 ## Projects
 alias vce='cd C:/VCE/application'
 alias vcew='cd C:/VCE/application/PatientConnect/Vocera.PatientConnect.Web'
+alias vcea='cd C:/VCE/admin-tools-web'
 alias vsts='cd C:/VST/StatusChecker'
 alias vstsw='cd C:/VST/StatusChecker/src/StatusChecker'
+alias caco='cd C:/Development/cacoquote'
