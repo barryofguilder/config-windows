@@ -11,12 +11,9 @@ PROMPT_COMMAND='PS1="$(gitPrompt)"'
 
 # Aliases
 
-## Tools
-alias subl='C:/Program\ Files/Sublime\ Text\ 3/sublime_text.exe'
-
 ## Shortcuts
 alias ll='ls -al'
-alias editbash='subl ~/.bash_profile'
+alias editbash='atom ~/.bash_profile'
 alias resource='source ~/.bash_profile && echo "Done!"'
 
 ## Git commands
@@ -38,3 +35,5 @@ alias vcea='cd C:/VCE/admin-tools-web'
 alias vsts='cd C:/VST/StatusChecker'
 alias vstsw='cd C:/VST/StatusChecker/src/StatusChecker'
 alias caco='cd C:/Development/cacoquote'
+alias upapi='cd C:/UP/up-services'
+alias upweb='cd C:/UP/up-admin-web'
