@@ -1,24 +1,37 @@
-# Add Git to prompt
-# inspired from answer at: http://stackoverflow.com/questions/10133173/alter-git-prompt-on-windows
-gitPrompt() {
-  local defaultColor='\[\e[0m\]'
-  local greenColor='\[\033[0m\]\[\033[1;32m\]'
-  echo "\n\w$greenColor$(__git_ps1)$defaultColor\n→ "
-}
+# Get the Git branch
+#parse_git_branch() {
+#  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+#}
 
-PROMPT_COMMAND='PS1="$(gitPrompt)"'
+# Custom bash prompt
+#
+# Includes custom character for the prompt, path, and Git branch name.
+#
+# Source: kirsle.net/wizards/ps1.html
+#export PS1="\n\[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(parse_git_branch)\n\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput sgr0)\]"
 
+export PATH=/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:${PATH}
+export PATH=$PATH:/usr/local/mysql/bin/
+export PATH=$PATH:~/bin/
+
+# Add token for GitHub packages
+export NPM_TOKEN="token"
+
+# nodenv
+# Source: https://github.com/nodenv/nodenv
+#eval "$(nodenv init -)"
 
 # Aliases
 
 ## Shortcuts
 alias ll='ls -al'
-alias editbash='atom ~/.bash_profile'
+alias editbash='code ~/.bash_profile'
 alias resource='source ~/.bash_profile && echo "Done!"'
 
 ## Git commands
 alias log='git log'
 alias diff='git diff'
+alias diffe='git diff -- . ":(exclude)package-lock.json"'
 alias branch='git branch'
 alias st='git status'
 alias fetch='git fetch'
@@ -27,16 +40,25 @@ alias pull='git pull'
 alias add='git add --all'
 alias cm='git commit -m'
 alias co='git checkout'
+alias cherry='git cherry-pick'
+alias rebase='git rebase -i'
+alias reset='git reset --hard head'
+alias recent='git recent'
 
-## Projects
-alias vce='cd C:/VCE/application'
-alias vcew='cd C:/VCE/application/PatientConnect/Vocera.PatientConnect.Web'
-alias vcea='cd C:/VCE/admin-tools-web'
-alias vsts='cd C:/VST/StatusChecker'
-alias vstsw='cd C:/VST/StatusChecker/src/StatusChecker'
-alias caco='cd C:/Development/cacoquote'
-alias upapi='cd C:/UP/services-dotnet'
-alias upaweb='cd C:/UP/admin-web'
-alias upweb='cd C:/UP/web-client'
-alias uphweb='cd C:/UP/hl7-admin-web'
-alias uphapi='cd C:/UP/hl7-admin-api'
+## Other aliases
+alias rmember='rm -rf node_modules dist tmp'
+
+## Personal Projects
+alias config='cd ~/Development/config-windows'
+
+## Work Projects
+alias dops='cd ~/Development/data-ops-web-server'
+alias dopsui='cd ~/Development/data-ops-web-client'
+alias ops='cd ~/Development/devops-shared'
+alias rtp='cd ~/Development/RTP'
+
+## Other
+alias dopscopy='robocopy "C:\Users\jbarry\Development\data-ops-web-client\dist" "C:\Users\jbarry\Development\data-ops-web-server\DataOperations\UI\dist" /e /purge'
+
+## AWS
+alias awsrenew='python3 ~/Development/devops-shared/cli-sts-auth/sso-aws-cli-auth.py'
